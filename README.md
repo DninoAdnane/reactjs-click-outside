@@ -1,68 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# dynamic-form
 
-## Available Scripts
+ click-outside-react is an reactjs lightweight library, using to handle clicks outside `React` and `user` components
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+The package can be installed via npm : 
+`npm install --save click-outside-react`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Configuration
 
-### `npm test`
+**.** In order to use this component, you need to import `{ClickOutside}` in your js file, and then **wrap** the desired component :
+```javascript
+import { ClickOutside } from 'click-outside-react';
+....
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+function ComponentUsingThis () {
+    return (
+        .....
+        <ClickOutside outsideCall={()=> alert('click outside the red container')}>
+            <div
+                style={{ height: "500px", width: "500px", backgroundColor: "red" }}
+                onClick={() => console.log("CLICKED CONTAINER RED")}
+            />
+      </ClickOutside>
+    )
+}
 
-### `npm run build`
+export default ComponentUsingThis;
+```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**-** The `ClickOutside` will be removed, if you use **Inspect Element** tool, when inspecting your `HTML` code, you will notice that the html tag doesn't show up, because `ClickOutside` clone the child component, so none other component is added to the **DOM**.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+**-** All you `props` and `style` goes on the child component of `ClickOutside`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**-** Use `outsideCall` to pass reference to method you wanna excute when the user clicks outside your **wraped component**.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Licence
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[MIT](https://opensource.org/licenses/MIT)
