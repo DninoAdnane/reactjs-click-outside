@@ -1,18 +1,18 @@
-# dynamic-form
+# reactjs-click-outside
 
- click-outside-react is an reactjs lightweight library, using to handle clicks outside `React` and `user` components
+ reactjs-click-outside is an reactjs lightweight library, using to handle clicks outside `React` and `user` components
 
 ## Installation
 
 The package can be installed via npm : 
-`npm install --save click-outside-react`
+`npm install --save reactjs-click-outside`
 
 
 ## Configuration
 
 **.** In order to use this component, you need to import `{ClickOutside}` in your js file, and then **wrap** the desired component :
 ```javascript
-import { ClickOutside } from 'click-outside-react';
+import { ClickOutside } from 'reactjs-click-outside';
 ....
 
 function ComponentUsingThis () {
